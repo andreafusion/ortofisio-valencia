@@ -23,5 +23,5 @@ export const site = {
   bookingUrl:      '/reservar',
 
   // ⚠️ Reemplaza con tu URL real de Calendly
-  calendlyUrl: 'https://calendly.com/mimas-iconic/reserva',
+  calendlyUrl: 'https://calendly.com/andreafusiondigital/reservar-cita-mimasiconic?month=2026-02',
 } as const;
