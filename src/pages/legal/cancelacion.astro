@@ -1,13 +1,229 @@
----
-import Base   from '../../layouts/Base.astro';
-import Nav    from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
----
-<Base title="Política de Cancelación — Mimas Iconic">
-  <Nav />
-  <main id="main-content" class="container" style="padding-block: 5rem; max-width: 760px;">
-    <h1 style="font-family:'Playfair Display',serif; margin-bottom:2rem;">Política de Cancelación</h1>
-    <p style="color:var(--charcoal-light)">Contenido de la Política de Cancelación próximamente.</p>
-  </main>
-  <Footer />
-</Base>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Cancelación — Mimas Iconic</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #faf7f4;
+        color: #3d3836;
+        line-height: 1.8;
+        padding: 2rem 1rem;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #3d3836;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem;
+        color: #b99ba4;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: #5d5856;
+      }
+
+      ul {
+        margin: 1rem 0 1rem 2rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+        color: #5d5856;
+      }
+
+      a {
+        color: #b99ba4;
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: #e8c4c4;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #b99ba4;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        color: #e8c4c4;
+      }
+
+      .date {
+        font-size: 0.9rem;
+        color: #9a7f87;
+        margin-bottom: 2rem;
+      }
+
+      .note {
+        background: #faf7f4;
+        border: 1px solid rgba(185, 155, 164, 0.35);
+        border-radius: 16px;
+        padding: 1rem 1.2rem;
+        margin: 1.25rem 0 0.5rem;
+        color: #5d5856;
+      }
+
+      .highlight {
+        font-weight: 600;
+        color: #3d3836;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <a href="/" class="back-link">← Volver a la web</a>
+
+      <h1>Política de Cancelación</h1>
+      <p class="date">Última actualización: Febrero 2026</p>
+
+      <p>
+        En <span class="highlight">Mimas Iconic</span> trabajamos con cita y
+        tiempo reservado exclusivamente para ti. Esta política nos ayuda a
+        mantener una agenda justa y a cuidar el servicio (y tu experiencia).
+      </p>
+
+      <h2>1. Reservas y confirmación</h2>
+      <p>
+        Las citas se gestionan mediante <span class="highlight">Calendly</span>.
+        Al reservar, recibirás un email de confirmación con los detalles de tu
+        cita.
+      </p>
+      <p class="note">
+        <span class="highlight">Recomendación:</span> guarda el email de
+        confirmación. Desde ahí podrás reprogramar o cancelar según las
+        condiciones indicadas.
+      </p>
+
+      <h2>2. Cambios de cita</h2>
+      <p>
+        Puedes <span class="highlight">reprogramar</span> tu cita con al menos
+        <span class="highlight">24 horas de antelación</span>. Si necesitas
+        cambiarla con menos tiempo, escríbenos y lo intentaremos encajar según
+        disponibilidad.
+      </p>
+      <ul>
+        <li>
+          <strong>Con 24h o más:</strong> cambio sin coste (según huecos
+          disponibles).
+        </li>
+        <li>
+          <strong>Con menos de 24h:</strong> puede aplicarse cargo o pérdida de
+          la reserva, dependiendo del caso (ver apartados 3 y 4).
+        </li>
+      </ul>
+
+      <h2>3. Cancelaciones</h2>
+      <p>
+        Puedes <span class="highlight">cancelar</span> tu cita con al menos
+        <span class="highlight">24 horas de antelación</span>. Las cancelaciones
+        fuera de plazo afectan a la agenda y al tiempo de trabajo reservado.
+      </p>
+      <ul>
+        <li>
+          <strong>Con 24h o más:</strong> cancelación sin penalización.
+        </li>
+        <li>
+          <strong>Con menos de 24h:</strong> se considera cancelación tardía y
+          puede aplicarse cargo o pérdida de la reserva.
+        </li>
+      </ul>
+
+      <h2>4. No presentarse (No-show)</h2>
+      <p>
+        Si no acudes a tu cita y no avisas, se considera
+        <span class="highlight">no-show</span>.
+      </p>
+      <ul>
+        <li>
+          En caso de <strong>no-show</strong>, para volver a reservar podría
+          requerirse <strong>pago por adelantado</strong> o no aceptarse nuevas
+          citas en determinadas circunstancias.
+        </li>
+      </ul>
+
+      <h2>5. Llegadas tarde</h2>
+      <p>
+        Sabemos que pueden surgir imprevistos. Si vas a llegar tarde,
+        <span class="highlight">avísanos cuanto antes</span>.
+      </p>
+      <ul>
+        <li>
+          <strong>Hasta 10 minutos:</strong> intentaremos mantener el servicio
+          ajustando tiempos si es posible.
+        </li>
+        <li>
+          <strong>Más de 10 minutos:</strong> puede ser necesario acortar el
+          servicio o reprogramar la cita, ya que debemos respetar la agenda de
+          las siguientes clientas.
+        </li>
+      </ul>
+
+      <h2>6. Servicios largos o especiales</h2>
+      <p>
+        En servicios de mayor duración (por ejemplo,
+        <span class="highlight">nails premium / gel / polygel / diseños complejos</span>),
+        puede requerirse <span class="highlight">confirmación adicional</span> o
+        <span class="highlight">pago por adelantado</span>. Si aplica, se
+        indicará durante el proceso de reserva o por mensaje.
+      </p>
+
+      <h2>7. Excepciones</h2>
+      <p>
+        Situaciones como enfermedad repentina o causas de fuerza mayor se
+        valorarán caso por caso. Nuestra prioridad es ser justas, mantener el
+        orden de la agenda y cuidar el servicio.
+      </p>
+
+      <h2>8. Contacto</h2>
+      <p>Si necesitas ayuda con tu cita, escríbenos:</p>
+      <ul>
+        <li>
+          <strong>Email:</strong>
+          <a href="mailto:hola@mimassalondeunas.com">hola@mimassalondeunas.com</a>
+        </li>
+        <li><strong>Ciudad:</strong> Valencia, España</li>
+      </ul>
+
+      <p class="note">
+        Gracias por respetar esta política. Nos ayuda a darte el tiempo, la
+        calma y el nivel de detalle que tus uñas se merecen. 💅✨
+      </p>
+    </div>
+  </body>
+</html>
