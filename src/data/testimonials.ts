@@ -5,6 +5,6 @@ export interface Testimonial {
 }
 
 export const testimonials: Testimonial[] = [
-  { id: 't1', quote: 'Mis uñas nunca habían durado tanto.',    author: 'Laura' },
-  { id: 't2', quote: 'Siempre salgo sintiéndome más guapa.',   author: 'Marta' },
+  { id: 't1', quote: 'Duran semanas y siguen viéndose perfectas.',    author: 'Laura' },
+  { id: 't2', quote: 'Siempre salgo con las uñas perfectas y relajada.',   author: 'Marta' },
 ];
