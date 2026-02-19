@@ -1,0 +1,110 @@
+---
+import { site } from '../data/site';
+
+const MAPS_URL = 'https://www.google.com/maps/place//data=!4m2!3m1!1s0xd604f7297d65c07:0xaf7f4299ff431af5?sa=X&ved=1t:8290&ictx=111';
+const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff431af5&output=embed&z=16';
+---
+
+<section class="location section" aria-labelledby="location-heading">
+  <div class="container location__inner">
+
+    <div class="location__info">
+      <h2 id="location-heading">Dónde encontrarme</h2>
+      <address>
+        <p>{site.location.street}</p>
+        <p>{site.location.city}</p>
+      </address>
+      <ul class="location__hours" aria-label="Horarios">
+        {site.hours.map(h => (
+          <li>
+            <span class="location__day">{h.days}</span>
+            <span class="location__time">{h.time}</span>
+          </li>
+        ))}
+      </ul>
+      
+        href={MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--primary"
+        aria-label="Abrir ubicación en Google Maps"
+      >
+        Cómo llegar
+      </a>
+    </div>
+
+    <div class="location__map">
+      <iframe
+        src={EMBED_URL}
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de Mimas Iconic en Google Maps"
+        aria-label="Mapa de ubicación"
+      ></iframe>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .location { background: var(--cream); }
+
+  .location__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .location__info h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  address {
+    font-style: normal;
+    color: var(--charcoal-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .location__hours {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 2rem;
+  }
+  .location__hours li {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .location__day  { color: var(--charcoal); font-weight: 500; }
+  .location__time { color: var(--charcoal-light); }
+
+  .location__map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    height: 400px;
+  }
+  .location__map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .location__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .location__map { height: 280px; }
+  }
+</style>
