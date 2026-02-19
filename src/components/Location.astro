@@ -1,8 +1,9 @@
 ---
 import { site } from '../data/site';
 
-const MAPS_URL = 'https://www.google.com/maps/place//data=!4m2!3m1!1s0xd604f7297d65c07:0xaf7f4299ff431af5?sa=X&ved=1t:8290&ictx=111';
-const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff431af5&output=embed&z=16';
+const MAPS_LINK  = 'https://www.google.com/maps/place/HIPNOTIK+STUDIO+Tattoo+%26+Nail+Art/@39.4677338,-0.3851523,17z/data=!3m1!4b1!4m6!3m5!1s0xd604f7297d65c07:0xaf7f4299ff431af5!8m2!3d39.4677338!4d-0.3851523!16s%2Fg%2F11jr6fmjbk?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D';
+
+const EMBED_URL  = 'https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&output=embed';
 ---
 
 <section class="location section" aria-labelledby="location-heading">
@@ -14,20 +15,11 @@ const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff
         <p>{site.location.street}</p>
         <p>{site.location.city}</p>
       </address>
-      <ul class="location__hours" aria-label="Horarios">
-        {site.hours.map(h => (
-          <li>
-            <span class="location__day">{h.days}</span>
-            <span class="location__time">{h.time}</span>
-          </li>
-        ))}
-      </ul>
       
-        href={MAPS_URL}
+       <a href={MAPS_LINK}
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn--primary"
-        aria-label="Abrir ubicación en Google Maps"
       >
         Cómo llegar
       </a>
@@ -43,7 +35,6 @@ const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         title="Ubicación de Mimas Iconic en Google Maps"
-        aria-label="Mapa de ubicación"
       ></iframe>
     </div>
 
@@ -55,12 +46,13 @@ const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff
 
   .location__inner {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 2fr;
     gap: 4rem;
     align-items: center;
   }
 
   .location__info h2 {
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     margin-bottom: 1.25rem;
   }
@@ -69,24 +61,8 @@ const EMBED_URL = 'https://maps.google.com/maps?q=0xd604f7297d65c07:0xaf7f4299ff
     font-style: normal;
     color: var(--charcoal-light);
     line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-
-  .location__hours {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
     margin-bottom: 2rem;
   }
-  .location__hours li {
-    display: flex;
-    justify-content: space-between;
-    font-size: .9rem;
-    padding-bottom: .5rem;
-    border-bottom: 1px solid var(--cream-dark);
-  }
-  .location__day  { color: var(--charcoal); font-weight: 500; }
-  .location__time { color: var(--charcoal-light); }
 
   .location__map {
     border-radius: var(--radius);
