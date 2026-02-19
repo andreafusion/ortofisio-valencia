@@ -5,7 +5,8 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  site: 'https://mimas-iconic-n6hi.vercel.app',
+  site: 'https://mimas-iconic-n6hi.vercel.app', //Cambiar al desplegar y cuando tenga dominio//
+  output: 'hybrid',
   compressHTML: true,
   vite: {
     resolve: {
