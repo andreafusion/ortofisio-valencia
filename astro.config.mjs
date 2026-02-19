@@ -2,12 +2,17 @@ import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  site: 'https://mimas-iconic-n6hi.vercel.app', //Cambiar al desplegar y cuando tenga dominio//
-  output: 'hybrid',
+  //Cambiar al desplegar y cuando tenga dominio//
+  site: 'https://mimas-iconic-n6hi.vercel.app',
+
+  output: 'static',
   compressHTML: true,
+
   vite: {
     resolve: {
       alias: {
@@ -17,4 +22,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: cloudflare(),
 });
