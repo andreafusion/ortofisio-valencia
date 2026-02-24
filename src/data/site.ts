@@ -6,6 +6,12 @@ export const site = {
   url: "https://mimas-iconic-astro.andreafusiondigital.workers.dev/",
   ogImage: "/assets/img/nails-05.webp",
   lang: "es",
+  // ── Tipografía ───────────────────────────────────────────────────────────
+  // Cambia las URLs y nombres para usar otras fuentes de Google Fonts
+  fonts: {
+    googleUrl:
+      "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+  },
 
   // ── Hero ────────────────────────────────────────────────────────────────
   hero: {
@@ -16,7 +22,7 @@ export const site = {
     imageAlt: "Manicura elegante natural",
     clientCount: "Más de 120 clientas felices",
     ctaPrimary: "Reservar cita",
-    ctaSecondary: "Ver diseños",
+    ctaSecondary: "Ver diseños"
   },
 
   // ── Negocio ──────────────────────────────────────────────────────────────
@@ -26,19 +32,19 @@ export const site = {
     mapsLink:
       "https://www.google.com/maps/place/HIPNOTIK+STUDIO+Tattoo+%26+Nail+Art/@39.4677338,-0.3851523,17z/data=!3m1!4b1!4m6!3m5!1s0xd604f7297d65c07:0xaf7f4299ff431af5!8m2!3d39.4677338!4d-0.3851523!16s%2Fg%2F11jr6fmjbk?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D",
     mapsEmbed:
-      "https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&output=embed",
+      "https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&output=embed"
   },
   hours: [
     { days: "Lunes a Viernes", time: "10:00 – 20:00" },
     { days: "Sábado", time: "10:00 – 14:00" },
-    { days: "Domingo", time: "Cerrado" },
+    { days: "Domingo", time: "Cerrado" }
   ],
 
   // ── CTA final ────────────────────────────────────────────────────────────
   cta: {
     heading: "¿Lista para reservar?",
     ctaPrimary: "Reservar cita",
-    ctaSecondary: "WhatsApp",
+    ctaSecondary: "WhatsApp"
   },
 
   // ── Contacto y reservas ──────────────────────────────────────────────────
@@ -60,8 +66,8 @@ export const site = {
       'Me encantan las uñas con detalle. Las que cuando las miras dices: "sí, soy yo".',
       "Trabajo forma, estructura y acabado para que se vean bonitas desde el primer día… y también la semana tres.",
       "Puedes venir por algo minimal o por algo icónico. Mi trabajo es que te quede perfecto, sin que pierda tu esencia.",
-      "Aquí no vienes solo a hacerte las uñas.\nVienes a desconectar un rato.",
-    ],
+      "Aquí no vienes solo a hacerte las uñas.\nVienes a desconectar un rato."
+    ]
   },
 
   // ── Cómo funciona ────────────────────────────────────────────────────────
@@ -71,19 +77,19 @@ export const site = {
       {
         number: "1",
         title: "Reservas online",
-        description: "Elige el día y hora que mejor te venga",
+        description: "Elige el día y hora que mejor te venga"
       },
       {
         number: "2",
         title: "Diseñamos juntas",
-        description: "Hablamos de lo que quieres y buscamos el mejor resultado",
+        description: "Hablamos de lo que quieres y buscamos el mejor resultado"
       },
       {
         number: "3",
         title: "Sales feliz",
-        description: "Con resultados que duran y se ven increíbles",
-      },
-    ],
+        description: "Con resultados que duran y se ven increíbles"
+      }
+    ]
   },
 
   // ── Newsletter modal ─────────────────────────────────────────────────────
@@ -96,6 +102,6 @@ export const site = {
     placeholder: "Tu correo electrónico",
     legal:
       "Al suscribirte, aceptas recibir emails con novedades y ofertas. Puedes darte de baja cuando quieras.",
-    successMsg: "¡Bienvenida! Revisa tu email.",
-  },
+    successMsg: "¡Bienvenida! Revisa tu email."
+  }
 } as const;

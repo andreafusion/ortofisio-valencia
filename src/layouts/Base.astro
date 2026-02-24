@@ -1,6 +1,6 @@
 ---
-import { site } from '../data/site';
-import '../styles/global.css';
+import { site } from "../data/site";
+import "../styles/global.css";
 
 interface Props {
   title?: string;
@@ -11,7 +11,7 @@ interface Props {
 const {
   title = `${site.brand} — ${site.tagline}`,
   description = site.description,
-  ogImage = site.ogImage,
+  ogImage = site.ogImage
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, site.url);
@@ -40,8 +40,8 @@ const canonicalURL = new URL(Astro.url.pathname, site.url);
 
     <link rel="canonical" href={canonicalURL} />
     <meta name="theme-color" content="#E8C4C4" />
-     
-         <!-- Favicons / App icons -->
+
+    <!-- Favicons / App icons -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
 
@@ -50,17 +50,23 @@ const canonicalURL = new URL(Astro.url.pathname, site.url);
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
-
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/android-chrome-512x512.png"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href={site.fonts.googleUrl} rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
