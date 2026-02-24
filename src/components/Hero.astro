@@ -2,33 +2,28 @@
 import { site } from '../data/site';
 import { testimonials } from '../data/testimonials';
 ---
-
 <section class="hero" aria-label="Presentación">
   <div class="hero__content">
-    <h1 class="hero__title">Manicura en Valencia.<br />Arte icónico.</h1>
-    <p class="hero__subtitle">
-      De clean perfecto a diseños exclusivos: semipermanente, manicura rusa, soft gel y nail art personalizado.
-    </p>
+    <h1 class="hero__title" set:html={site.hero.title} />
+    <p class="hero__subtitle">{site.hero.subtitle}</p>
     <div class="hero__actions">
-      <a href={site.bookingUrl} class="btn btn--primary">Reservar cita</a>
-      <a href="#galeria"        class="btn btn--secondary">Ver diseños</a>
+      <a href={site.bookingUrl} class="btn btn--primary">{site.hero.ctaPrimary}</a>
+      <a href="#galeria"        class="btn btn--secondary">{site.hero.ctaSecondary}</a>
     </div>
   </div>
-
   <div class="hero__image">
     <img
-      src="/assets/img/nails-05.webp"
-      alt="Manicura elegante natural"
+      src={site.hero.image}
+      alt={site.hero.imageAlt}
       width="600"
       height="700"
       loading="eager"
       fetchpriority="high"
     />
   </div>
-
   <div class="hero__social-proof" aria-label="Valoraciones de clientas">
     <p class="hero__stars" aria-label="5 estrellas">★★★★★</p>
-    <p class="hero__count">Más de 120 clientas felices</p>
+    <p class="hero__count">{site.hero.clientCount}</p>
     <div class="hero__testimonials">
       {testimonials.map(t => (
         <figure class="hero__testimonial">

@@ -1,22 +1,18 @@
 ---
-import { site } from '../data/site';
-
-const MAPS_LINK  = 'https://www.google.com/maps/place/HIPNOTIK+STUDIO+Tattoo+%26+Nail+Art/@39.4677338,-0.3851523,17z/data=!3m1!4b1!4m6!3m5!1s0xd604f7297d65c07:0xaf7f4299ff431af5!8m2!3d39.4677338!4d-0.3851523!16s%2Fg%2F11jr6fmjbk?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D';
-
-const EMBED_URL  = 'https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&output=embed';
+import { site } from "../data/site";
 ---
 
 <section class="location section" aria-labelledby="location-heading">
   <div class="container location__inner">
-
     <div class="location__info">
       <h2 id="location-heading">Dónde encontrarme</h2>
       <address>
         <p>{site.location.street}</p>
         <p>{site.location.city}</p>
       </address>
-      
-       <a href={MAPS_LINK}
+
+      <a
+        href={site.location.mapsLink}
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn--primary"
@@ -24,46 +20,41 @@ const EMBED_URL  = 'https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&ou
         Cómo llegar
       </a>
     </div>
-
     <div class="location__map">
       <iframe
-        src={EMBED_URL}
+        src={site.location.mapsEmbed}
         width="100%"
         height="400"
         style="border:0;"
         allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Ubicación de Mimas Iconic en Google Maps"
-      ></iframe>
+        title={`Ubicación de ${site.brand} en Google Maps`}></iframe>
     </div>
-
   </div>
 </section>
 
 <style>
-  .location { background: var(--cream); }
-
+  .location {
+    background: var(--cream);
+  }
   .location__inner {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
     align-items: center;
   }
-
   .location__info h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     margin-bottom: 1.25rem;
   }
-
   address {
     font-style: normal;
     color: var(--charcoal-light);
     line-height: 1.8;
     margin-bottom: 2rem;
   }
-
   .location__map {
     border-radius: var(--radius);
     overflow: hidden;
@@ -75,12 +66,13 @@ const EMBED_URL  = 'https://maps.google.com/maps?q=39.4677338,-0.3851523&z=17&ou
     width: 100%;
     height: 100%;
   }
-
   @media (max-width: 768px) {
     .location__inner {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
-    .location__map { height: 280px; }
+    .location__map {
+      height: 280px;
+    }
   }
 </style>

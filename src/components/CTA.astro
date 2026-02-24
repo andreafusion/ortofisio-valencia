@@ -1,12 +1,15 @@
 ---
-import { site } from '../data/site';
+import { site } from "../data/site";
 ---
 
 <section class="cta section" aria-labelledby="cta-heading">
   <div class="container cta__inner">
-    <h2 id="cta-heading">¿Lista para tus próximas uñas favoritas?</h2>
+    <h2 id="cta-heading">{site.cta.heading}</h2>
     <div class="cta__actions">
-      <a href={site.bookingUrl} class="btn btn--primary">Reservar cita</a>
+      <a href={site.bookingUrl} class="btn btn--primary">
+        {site.cta.ctaPrimary}
+      </a>
+
       <a
         href={site.whatsapp}
         class="btn btn--secondary"
@@ -14,7 +17,7 @@ import { site } from '../data/site';
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
       >
-        WhatsApp
+        {site.cta.ctaSecondary}
       </a>
     </div>
   </div>
