@@ -1,29 +1,11 @@
 ---
-const steps = [
-  {
-    number: '1',
-    title: 'Reservas online',
-    description: 'Elige el día y hora que mejor te venga',
-  },
-  {
-    number: '2',
-    title: 'Diseñamos juntas',
-    description: 'Hablamos de lo que quieres y buscamos el mejor resultado',
-  },
-  {
-    number: '3',
-    title: 'Sales feliz',
-    description: 'Con uñas que duran y se ven increíbles',
-  },
-];
+import { site } from '../data/site';
 ---
-
 <section class="how section section--alt" aria-labelledby="how-heading">
   <div class="container">
-    <h2 id="how-heading" class="section__title">Cómo funciona</h2>
-
+    <h2 id="how-heading" class="section__title">{site.howItWorks.heading}</h2>
     <ol class="how__steps">
-      {steps.map(step => (
+      {site.howItWorks.steps.map(step => (
         <li class="how__step">
           <span class="how__number" aria-hidden="true">{step.number}</span>
           <h3 class="how__step-title">{step.title}</h3>

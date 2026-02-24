@@ -50,4 +50,52 @@ export const site = {
   // ⚠️ Reemplaza con tu URL real de Calendly
   calendlyUrl:
     "https://calendly.com/andreafusiondigital/reservar-cita-mimasiconic?month=2026-02",
+
+  // ── Sobre mí ─────────────────────────────────────────────────────────────
+  about: {
+    image: "/assets/img/mimas-iconic-about.webp",
+    imageAlt: "Profesional trabajando",
+    heading: "Mimas", // El nombre que aparece en el h2
+    paragraphs: [
+      'Me encantan las uñas con detalle. Las que cuando las miras dices: "sí, soy yo".',
+      "Trabajo forma, estructura y acabado para que se vean bonitas desde el primer día… y también la semana tres.",
+      "Puedes venir por algo minimal o por algo icónico. Mi trabajo es que te quede perfecto, sin que pierda tu esencia.",
+      "Aquí no vienes solo a hacerte las uñas.\nVienes a desconectar un rato.",
+    ],
+  },
+
+  // ── Cómo funciona ────────────────────────────────────────────────────────
+  howItWorks: {
+    heading: "Cómo funciona",
+    steps: [
+      {
+        number: "1",
+        title: "Reservas online",
+        description: "Elige el día y hora que mejor te venga",
+      },
+      {
+        number: "2",
+        title: "Diseñamos juntas",
+        description: "Hablamos de lo que quieres y buscamos el mejor resultado",
+      },
+      {
+        number: "3",
+        title: "Sales feliz",
+        description: "Con resultados que duran y se ven increíbles",
+      },
+    ],
+  },
+
+  // ── Newsletter modal ─────────────────────────────────────────────────────
+  newsletter: {
+    enabled: true, // false = el modal no aparece
+    title: "Iconic Duality",
+    subtitle: "Dos estilos. Una newsletter.",
+    description:
+      "Cada mes recibirás inspiración, tendencias y ofertas exclusivas.",
+    placeholder: "Tu correo electrónico",
+    legal:
+      "Al suscribirte, aceptas recibir emails con novedades y ofertas. Puedes darte de baja cuando quieras.",
+    successMsg: "¡Bienvenida! Revisa tu email.",
+  },
 } as const;

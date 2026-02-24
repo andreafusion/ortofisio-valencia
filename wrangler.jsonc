@@ -1,16 +1,14 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "mimas-iconic-astro",
+  // ⚠️ CAMBIAR: nombre único para este proyecto en Cloudflare Workers
+  "name": "full-web-template",
+  "main": "dist/_worker.js/index.js",
   "compatibility_date": "2026-02-19",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
     "enabled": true
   }
 }

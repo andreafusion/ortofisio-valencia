@@ -1,7 +1,8 @@
 ---
-
+import { site } from '../data/site';
 ---
 
+{site.newsletter.enabled && (
 <div
   class="modal-overlay"
   id="newsletter-overlay"
@@ -17,167 +18,99 @@
       aria-label="Cerrar ventana"
       type="button"
     >
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        aria-hidden="true"
-      >
-        <line
-          x1="1"
-          y1="1"
-          x2="15"
-          y2="15"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"></line>
-        <line
-          x1="15"
-          y1="1"
-          x2="1"
-          y2="15"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"></line>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <line x1="1" y1="1" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <line x1="15" y1="1" x2="1" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
       </svg>
     </button>
 
-    <h2 id="modal-title" class="modal__title">Iconic Duality</h2>
-    <p class="modal__subtitle">Dos estilos. Una newsletter.</p>
-    <p class="modal__desc">
-      Cada mes recibirás inspiración sobre manicuras naturales, tendencias
-      delicadas y ofertas exclusivas. Solo para las que aprecian lo bonito sin
-      exagerar.
-    </p>
+    <h2 id="modal-title" class="modal__title">{site.newsletter.title}</h2>
+    <p class="modal__subtitle">{site.newsletter.subtitle}</p>
+    <p class="modal__desc">{site.newsletter.description}</p>
 
     <form id="newsletter-form" novalidate>
       <div class="modal__field">
-        <label for="newsletter-email" class="sr-only"
-          >Tu correo electrónico</label
-        >
+        <label for="newsletter-email" class="sr-only">{site.newsletter.placeholder}</label>
         <input
           type="email"
           id="newsletter-email"
           name="email"
-          placeholder="Quiero enterarme de las promociones"
+          placeholder={site.newsletter.placeholder}
           required
           autocomplete="email"
         />
       </div>
       <button type="submit" class="btn btn--primary">Suscribirme</button>
-      <p class="modal__legal">
-        Al suscribirte, aceptas recibir emails con novedades y ofertas. Puedes
-        darte de baja cuando quieras.
-      </p>
+      <p class="modal__legal">{site.newsletter.legal}</p>
     </form>
 
     <p class="modal__success" id="modal-success" hidden>
-      ¡Bienvenida! Revisa tu email.
+      {site.newsletter.successMsg}
     </p>
   </div>
 </div>
+)}
 
 <script>
-  // Run after ALL resources are loaded (images, fonts, etc.)
-  window.addEventListener("load", () => {
-    const overlay = document.getElementById(
-      "newsletter-overlay",
-    ) as HTMLElement | null;
-    const closeBtn = document.getElementById(
-      "modal-close",
-    ) as HTMLButtonElement | null;
-    const form = document.getElementById(
-      "newsletter-form",
-    ) as HTMLFormElement | null;
-    const successMsg = document.getElementById(
-      "modal-success",
-    ) as HTMLElement | null;
+  window.addEventListener('load', () => {
+    const overlay   = document.getElementById('newsletter-overlay')  as HTMLElement | null;
+    const closeBtn  = document.getElementById('modal-close')          as HTMLButtonElement | null;
+    const form      = document.getElementById('newsletter-form')      as HTMLFormElement | null;
+    const successMsg= document.getElementById('modal-success')        as HTMLElement | null;
 
     if (!overlay) return;
 
-    // ── Helpers ──────────────────────────────────────────────
-    function openModal() {
-      overlay!.hidden = false;
-      closeBtn?.focus();
-    }
-
+    function openModal()  { overlay!.hidden = false; closeBtn?.focus(); }
     function closeModal() {
       overlay!.hidden = true;
-      // Store dismissal with 24-hour expiry so it re-shows the next day
       try {
-        const expires = Date.now() + 24 * 60 * 60 * 1000;
-        localStorage.setItem("newsletter-dismissed", String(expires));
+        localStorage.setItem('newsletter-dismissed', String(Date.now() + 24 * 60 * 60 * 1000));
       } catch (_e) {}
     }
 
-    // ── Should we show it? ────────────────────────────────────
     let shouldShow = true;
     try {
-      const stored = localStorage.getItem("newsletter-dismissed");
-      if (stored && Date.now() < Number(stored)) {
-        shouldShow = false; // still within the 24h window
-      }
+      const stored = localStorage.getItem('newsletter-dismissed');
+      if (stored && Date.now() < Number(stored)) shouldShow = false;
     } catch (_e) {}
 
-    if (shouldShow) {
-      // 10 seconds after page fully loaded
-      setTimeout(openModal, 10_000);
-    }
+    if (shouldShow) setTimeout(openModal, 10_000);
 
-    // ── Event listeners ───────────────────────────────────────
-    closeBtn?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeModal();
-    });
+    closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+    overlay.addEventListener('click',   (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown',(e) => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
 
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !overlay.hidden) closeModal();
-    });
-
-    form?.addEventListener("submit", async (e) => {
+    form?.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const input = form.querySelector("#newsletter-email") as HTMLInputElement;
-      const email = input?.value?.trim();
-      const submitBtn = form.querySelector(
-        'button[type="submit"]',
-      ) as HTMLButtonElement;
-
+      const input     = form.querySelector('#newsletter-email') as HTMLInputElement;
+      const email     = input?.value?.trim();
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
       if (!email) return;
 
-      // Estado de carga
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Enviando...";
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Enviando...';
 
       try {
-        const res = await fetch("/api/newsletter", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
+        const res  = await fetch('/api/newsletter', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ email }),
         });
-
         const data = await res.json();
 
         if (res.ok && data.ok) {
-          // Éxito — muestra mensaje y cierra
-          if (form) form.hidden = true;
+          if (form)       form.hidden       = true;
           if (successMsg) successMsg.hidden = false;
           setTimeout(closeModal, 2500);
         } else {
-          // Error de la API
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Suscribirme";
-          alert(data.error ?? "Algo salió mal. Inténtalo de nuevo.");
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Suscribirme';
+          alert(data.error ?? 'Algo salió mal. Inténtalo de nuevo.');
         }
       } catch (_e) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Suscribirme";
-        alert("Error de conexión. Inténtalo de nuevo.");
+        submitBtn.disabled    = false;
+        submitBtn.textContent = 'Suscribirme';
+        alert('Error de conexión. Inténtalo de nuevo.');
       }
     });
   });

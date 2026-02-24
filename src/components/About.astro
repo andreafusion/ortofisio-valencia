@@ -1,29 +1,22 @@
 ---
+import { site } from '../data/site';
 ---
-
 <section id="sobre-mi" class="about section" style="background: var(--cream);" aria-labelledby="about-heading">
   <div class="container about__inner">
-
     <div class="about__image">
       <img
-        src="/assets/img/mimas-iconic-about.webp"
-        alt="Profesional de manicura trabajando"
+        src={site.about.image}
+        alt={site.about.imageAlt}
         width="500"
         height="600"
         loading="lazy"
       />
     </div>
-
     <div class="about__text">
-      <h2 id="about-heading">Soy <em>Mimas</em>.</h2>
-      <p>Me encantan las uñas con detalle. Las que cuando las miras dices: “sí, soy yo”.</p>
-      <p>Trabajo forma, estructura y acabado para que se vean bonitas desde el primer día… y también la semana tres.</p>
-      <p>Puedes venir por algo minimal o por algo icónico. Mi trabajo es que te quede perfecto, sin que pierda tu esencia.</p>
-      <p>
-        Aquí no vienes solo a hacerte las uñas.<br />
-        Vienes a desconectar un rato.
-      </p>
+      <h2 id="about-heading">Soy <em>{site.about.heading}</em>.</h2>
+      {site.about.paragraphs.map(p => (
+        <p set:html={p.replace('\n', '<br />')} />
+      ))}
     </div>
-
   </div>
 </section>
