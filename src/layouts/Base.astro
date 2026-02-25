@@ -39,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, site.url);
     <meta name="twitter:image" content={new URL(ogImage, site.url)} />
 
     <link rel="canonical" href={canonicalURL} />
-    <meta name="theme-color" content="#E8C4C4" />
+    <meta name="theme-color" content={site.themeColor} />
 
         <!-- Favicons / App icons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />

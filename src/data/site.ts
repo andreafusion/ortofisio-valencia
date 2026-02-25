@@ -3,7 +3,7 @@ export const site = {
   tagline: "Fisioterapia 1 a 1 en Benimaclet",
   description:
     "Fisioterapia en Valencia para dolor lumbar, cervical y lesiones deportivas.",
-  url: "https://TU-DOMINIO-AQUI.vercel.app",
+  url: "https://ortofisio-valencia.vercel.app,",
   ogImage: "/assets/img/og/og-image.png",
   lang: "es",
   // ── Tipografía ───────────────────────────────────────────────────────────
@@ -104,6 +104,7 @@ export const site = {
     { days: "Sábado", time: "09:00 – 13:00" },
     { days: "Domingo", time: "Cerrado" }
   ],
+  themeColor: "#2A7F8F",
 
   // ── Contacto ──────────────────────────────────────────────────────────────
   // Mensaje prefill de WhatsApp incluido en la URL
