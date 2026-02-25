@@ -30,27 +30,6 @@ export const site = {
     ctaSecondary: "Elegir hueco en agenda"
   },
 
-  // ── Equipo ───────────────────────────────────────────────────────────────
-  team: [
-    {
-      name: "Alejandro Ruiz",
-      role: "Fisioterapeuta Colegiado",
-      college: "Nº Col. CV-4821",
-      bio: "Especialista en fisioterapia musculoesquelética y deportiva. Más de 8 años trabajando con deportistas y pacientes con dolor crónico. Formado en punción seca, terapia manual y neurología.",
-      image: "/assets/img/ortofisio/team-alejandro.jpg",
-      imageAlt: "Alejandro Ruiz, fisioterapeuta colegiado en OrtoFisio Valencia"
-    },
-    {
-      name: "Sara Molina",
-      role: "Especialista en Readaptación Física",
-      college: "COLEF CV-2034",
-      bio: "Graduada en Ciencias de la Actividad Física y el Deporte. Especializada en readaptación tras lesión y vuelta al deporte. Diseña los planes de ejercicio terapéutico adaptados a cada paciente.",
-      image: "/assets/img/ortofisio/team-sara.jpg",
-      imageAlt:
-        "Sara Molina, especialista en readaptación física en OrtoFisio Valencia"
-    }
-  ],
-
   // ── Método (firma visual — solo activo si signature === 'method') ─────────
   howItWorks: {
     heading: "Nuestro método",
@@ -76,14 +55,32 @@ export const site = {
     ]
   },
 
-  // ── About ─────────────────────────────────────────────────────────────────
+  // ── About + Equipo ────────────────────────────────────────────────────────
   about: {
     heading: "Equipo OrtoFisio",
-    image: "/assets/img/ortofisio/clinica.jpg",
-    imageAlt: "Interior de la clínica OrtoFisio Valencia en Benimaclet",
     paragraphs: [
       "Somos una clínica pequeña por elección. Cada paciente trabaja directamente con su profesional, sin rotaciones ni asistentes.",
       "Combinamos fisioterapia clínica y readaptación física en el mismo espacio para que tu recuperación sea completa: desde aliviar el dolor hasta volver a moverte al 100%."
+    ],
+    team: [
+      {
+        name: "Alejandro Ruiz",
+        role: "Fisioterapeuta Colegiado",
+        college: "Nº Col. CV-4821",
+        bio: "Especialista en fisioterapia musculoesquelética y deportiva. Más de 8 años trabajando con deportistas y pacientes con dolor crónico. Formado en punción seca, terapia manual y neurología.",
+        image: "/assets/img/ortofisio/team-alejandro.webp",
+        imageAlt:
+          "Alejandro Ruiz, fisioterapeuta colegiado en OrtoFisio Valencia"
+      },
+      {
+        name: "Sara Molina",
+        role: "Especialista en Readaptación Física",
+        college: "COLEF CV-2034",
+        bio: "Graduada en Ciencias de la Actividad Física y el Deporte. Especializada en readaptación tras lesión y vuelta al deporte. Diseña los planes de ejercicio terapéutico adaptados a cada paciente.",
+        image: "/assets/img/ortofisio/team-sara.webp",
+        imageAlt:
+          "Sara Molina, especialista en readaptación física en OrtoFisio Valencia"
+      }
     ]
   },
 
