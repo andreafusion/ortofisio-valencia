@@ -330,7 +330,7 @@ h4 {
   gap: 2rem;
 }
 
-.nav__links a {
+.nav__links a:not(.btn) {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--charcoal-light);

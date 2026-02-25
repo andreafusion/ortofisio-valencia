@@ -1,21 +1,24 @@
 ---
-import { site } from "../data/site";
+import { site } from '../data/site';
 ---
-
 <section class="cta section" aria-labelledby="cta-heading">
   <div class="container cta__inner">
     <h2 id="cta-heading">{site.cta.heading}</h2>
     <div class="cta__actions">
-      <a href={site.bookingUrl} class="btn btn--primary">
-        {site.cta.ctaPrimary}
-      </a>
-
-      <a
-        href={site.whatsapp}
-        class="btn btn--secondary"
+      
+        <a href={site.whatsapp}
+        class="btn btn--primary"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
+      >
+        {site.cta.ctaPrimary}
+      </a>
+      
+        <a href={site.bookingUrl}
+        class="btn btn--secondary"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {site.cta.ctaSecondary}
       </a>
