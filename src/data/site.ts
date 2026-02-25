@@ -92,9 +92,10 @@ export const site = {
     ]
   },
 
-  // ── Newsletter modal ─────────────────────────────────────────────────────
+  // ── Newsletter modal (desactivado por defecto.
+  // Activar (y api) si el negocio requiere de Newsletter) ─────────────────────────────────────────────────────
   newsletter: {
-    enabled: true, // false = el modal no aparece
+    enabled: false, // false = el modal no aparece
     title: "Iconic Duality",
     subtitle: "Dos estilos. Una newsletter.",
     description:
