@@ -17,7 +17,7 @@ export const services: Service[] = [
       "Exploración completa, diagnóstico fisioterapéutico y plan de tratamiento personalizado. Incluye primera sesión de tratamiento.",
     priceFrom: 55,
     duration: "60 min",
-    image: "/assets/img/ortofisio/servicio-valoracion.jpg",
+    image: "/assets/img/ortofisio/galeria-06.webp",
     featured: true
   },
   {
@@ -27,7 +27,7 @@ export const services: Service[] = [
       "Terapia manual, movilización articular y técnicas específicas según tu evolución. Siempre 1 a 1, sin prisa.",
     priceFrom: 50,
     duration: "50 min",
-    image: "/assets/img/ortofisio/servicio-sesion.jpg",
+    image: "/assets/img/ortofisio/galeria-01.webp",
     featured: true
   },
   {
@@ -37,7 +37,7 @@ export const services: Service[] = [
       "Técnica de fisioterapia invasiva para liberar puntos gatillo musculares. Muy efectiva en dolores crónicos y contracturas profundas.",
     priceFrom: 50,
     duration: "50 min",
-    image: "/assets/img/ortofisio/servicio-puncion.jpg",
+    image: "/assets/img/ortofisio/galeria-05.webp",
     featured: true
   },
   {
@@ -47,7 +47,7 @@ export const services: Service[] = [
       "Masaje de descarga muscular para deportistas. Ideal para recuperación post-competición o prevención de lesiones.",
     priceFrom: 45,
     duration: "45 min",
-    image: "/assets/img/ortofisio/servicio-masaje.jpg",
+    image: "/assets/img/ortofisio/servicio-masaje.webp",
     featured: false
   },
   {
