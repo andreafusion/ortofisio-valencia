@@ -1,84 +1,74 @@
 export interface Service {
-  id:          string;
-  name:        string;
+  id: string;
+  name: string;
   description: string;
-  priceFrom:   number;
-  duration:    string;
-  image:       string;
-  featured:    boolean;
+  priceFrom: number;
+  priceSuffix?: string;
+  duration: string;
+  image: string;
+  featured: boolean;
 }
 
 export const services: Service[] = [
   {
-    id:          'natural-clean',
-    name:        'Natural & Clean',
-    description: 'Manicura básica con esmaltado semipermanente. Limpieza, forma y color duradero.',
-    priceFrom:   18,
-    duration:    '45 min',
-    image:       '/assets/img/nails-06.webp',
-    featured:    true,
+    id: "valoracion",
+    name: "Valoración inicial",
+    description:
+      "Exploración completa, diagnóstico fisioterapéutico y plan de tratamiento personalizado. Incluye primera sesión de tratamiento.",
+    priceFrom: 55,
+    duration: "60 min",
+    image: "/assets/img/ortofisio/servicio-valoracion.jpg",
+    featured: true
   },
   {
-    id:          'cute-detail',
-    name:        'Cute Detail',
-    description: 'Diseños delicados y personalizados adaptados a tu estilo.',
-    priceFrom:   25,
-    duration:    '60 min',
-    image:       '/assets/img/nails-04.webp',
-    featured:    true,
+    id: "sesion-fisio",
+    name: "Sesión de fisioterapia",
+    description:
+      "Terapia manual, movilización articular y técnicas específicas según tu evolución. Siempre 1 a 1, sin prisa.",
+    priceFrom: 50,
+    duration: "50 min",
+    image: "/assets/img/ortofisio/servicio-sesion.jpg",
+    featured: true
   },
   {
-    id:          'soft-glam',
-    name:        'Soft Glam',
-    description: 'Refuerzo o gel con acabado pulido y brillo duradero.',
-    priceFrom:   30,
-    duration:    '90 min',
-    image:       '/assets/img/nails-07.webp',
-    featured:    true,
+    id: "puncion-seca",
+    name: "Punción seca",
+    description:
+      "Técnica de fisioterapia invasiva para liberar puntos gatillo musculares. Muy efectiva en dolores crónicos y contracturas profundas.",
+    priceFrom: 50,
+    duration: "50 min",
+    image: "/assets/img/ortofisio/servicio-puncion.jpg",
+    featured: true
   },
   {
-    id:          'retirado',
-    name:        'Retirado',
-    description: 'Retirada segura del esmalte semipermanente o gel sin dañar la uña natural.',
-    priceFrom:   10,
-    duration:    '30 min',
-    image:       '/assets/img/nails-03.webp',
-    featured:    false,
+    id: "masaje-deportivo",
+    name: "Masaje deportivo",
+    description:
+      "Masaje de descarga muscular para deportistas. Ideal para recuperación post-competición o prevención de lesiones.",
+    priceFrom: 45,
+    duration: "45 min",
+    image: "/assets/img/ortofisio/servicio-masaje.jpg",
+    featured: false
   },
   {
-    id:          'relleno',
-    name:        'Relleno',
-    description: 'Mantenimiento del crecimiento para alargar la duración de tu manicura.',
-    priceFrom:   20,
-    duration:    '60 min',
-    image:       '/assets/img/nails-08.webp',
-    featured:    false,
+    id: "readaptacion",
+    name: "Readaptación física",
+    description:
+      "Programa de ejercicio terapéutico supervisado para recuperar fuerza, movilidad y volver al deporte de forma segura.",
+    priceFrom: 55,
+    duration: "60 min",
+    image: "/assets/img/ortofisio/servicio-readaptacion.jpg",
+    featured: false
   },
   {
-    id:          'reparacion',
-    name:        'Reparación',
-    description: 'Reparación de una o varias uñas rotas o dañadas.',
-    priceFrom:   5,
-    duration:    '15 min',
-    image:       '/assets/img/nails-09.webp',
-    featured:    false,
-  },
-  {
-    id:          'decoracion',
-    name:        'Decoración por uña',
-    description: 'Añade un diseño especial a una uña concreta. Nail art puntual.',
-    priceFrom:   3,
-    duration:    '10 min',
-    image:       '/assets/img/nails-02.webp',
-    featured:    false,
-  },
-  {
-    id:          'pedicura',
-    name:        'Pedicura',
-    description: 'Cuidado completo del pie: limpieza, forma, hidratación y esmaltado.',
-    priceFrom:   25,
-    duration:    '60 min',
-    image:       '/assets/img/nails-05.webp',
-    featured:    false,
-  },
+    id: "bono-sesiones",
+    name: "Bono 5 sesiones",
+    description:
+      "Ahorra en tu tratamiento. Válido para fisioterapia, punción seca o readaptación. Sin caducidad.",
+    priceFrom: 230,
+    priceSuffix: "el bono",
+    duration: "5 sesiones",
+    image: "/assets/img/ortofisio/servicio-bono.jpg",
+    featured: false
+  }
 ];
