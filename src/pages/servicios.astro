@@ -11,7 +11,7 @@ const additional = services.filter(s => !s.featured);
 
 <Base
   title={`Todos los servicios — ${site.brand}`}
-  description="Consulta todos los servicios disponibles: manicura, gel, relleno, pedicura y más. Precios y duraciones en Mimas Iconic, Valencia."
+  description={`Consulta todos los servicios disponibles con precios y duraciones. ${site.brand}, ${site.location.city}.`}
 >
   <Nav />
   <main id="main-content" class="servicios-page">
@@ -87,7 +87,7 @@ const additional = services.filter(s => !s.featured);
     margin-bottom: 4rem;
   }
   .servicios-page__header h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--charcoal);
   }
@@ -99,7 +99,7 @@ const additional = services.filter(s => !s.featured);
 
   /* ── Group title ─────────────────────────────── */
   .servicios-page__group-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.4rem;
     color: var(--charcoal);
     margin-bottom: 1rem;
@@ -135,7 +135,7 @@ const additional = services.filter(s => !s.featured);
     flex: 1;
   }
   .servicios-list__name {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--charcoal);
@@ -159,7 +159,7 @@ const additional = services.filter(s => !s.featured);
     white-space: nowrap;
   }
   .servicios-list__price {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--mauve-dark);

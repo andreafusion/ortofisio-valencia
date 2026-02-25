@@ -3,7 +3,7 @@ export const site = {
   tagline: "Manicura Natural y Elegante en Valencia",
   description:
     "Manicura natural y elegante en Valencia. Diseños delicados personalizados sin exagerar.",
-  url: "https://mimas-iconic-astro.andreafusiondigital.workers.dev/",
+  url: "https://TU-DOMINIO-AQUI.com",
   ogImage: "/assets/img/nails-05.webp",
   lang: "es",
   // ── Tipografía ───────────────────────────────────────────────────────────
@@ -50,12 +50,12 @@ export const site = {
   // ── Contacto y reservas ──────────────────────────────────────────────────
   whatsapp: "https://wa.me/34696626435",
   instagram: "https://instagram.com/mimasiconic",
+  email: "hola@negocio.com",
   instagramHandle: "@mimasiconic",
   bookingUrl: "/reservar",
 
   // ⚠️ Reemplaza con tu URL real de Calendly
-  calendlyUrl:
-    "https://calendly.com/andreafusiondigital/reservar-cita-mimasiconic?month=2026-02",
+  calendlyUrl: "https://calendly.com/TU-USUARIO/TU-EVENTO",
 
   // ── Sobre mí ─────────────────────────────────────────────────────────────
   about: {
