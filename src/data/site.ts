@@ -4,7 +4,7 @@ export const site = {
   description:
     "Fisioterapia en Valencia para dolor lumbar, cervical y lesiones deportivas.",
   url: "https://TU-DOMINIO-AQUI.vercel.app",
-  ogImage: "/assets/img/ortofisio/og-image.webp",
+  ogImage: "/assets/img/og/og-image.png",
   lang: "es",
   // ── Tipografía ───────────────────────────────────────────────────────────
   // Cambia las URLs y nombres para usar otras fuentes de Google Fonts
