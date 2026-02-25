@@ -1,17 +1,79 @@
 ---
 import { site } from '../data/site';
+const show = site.signature === 'method';
 ---
-<section class="how section section--alt" aria-labelledby="how-heading">
-  <div class="container">
-    <h2 id="how-heading" class="section__title">{site.howItWorks.heading}</h2>
-    <ol class="how__steps">
-      {site.howItWorks.steps.map(step => (
-        <li class="how__step">
-          <span class="how__number" aria-hidden="true">{step.number}</span>
-          <h3 class="how__step-title">{step.title}</h3>
-          <p class="how__step-desc">{step.description}</p>
-        </li>
-      ))}
-    </ol>
-  </div>
-</section>
+
+{show && (
+  <section class="method section" aria-labelledby="method-heading">
+    <div class="container">
+      <h2 id="method-heading" class="section__title">{site.howItWorks.heading}</h2>
+      <ol class="method__steps">
+        {site.howItWorks.steps.map(step => (
+          <li class="method__step">
+            <span class="method__number" aria-hidden="true">{step.number}</span>
+            <h3 class="method__title">{step.title}</h3>
+            <p class="method__desc">{step.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}
+
+<style>
+  .method { background: var(--color-text); }
+
+  .method .section__title {
+    color: var(--color-white);
+  }
+  .method .section__title::after {
+    background: var(--color-primary);
+  }
+
+  .method__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .method__step {
+    position: relative;
+    padding: 2.5rem 2rem 2rem;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .method__step:hover {
+    border-color: var(--color-primary);
+    background: rgba(42,127,143,.08);
+  }
+
+  .method__number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: .3;
+    margin-bottom: 1rem;
+    transition: opacity var(--transition);
+  }
+  .method__step:hover .method__number { opacity: .65; }
+
+  .method__title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-white);
+    margin-bottom: .75rem;
+  }
+  .method__desc {
+    font-size: .95rem;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .method__steps { grid-template-columns: 1fr; gap: 1.25rem; }
+    .method__number { font-size: 3.5rem; }
+  }
+</style>

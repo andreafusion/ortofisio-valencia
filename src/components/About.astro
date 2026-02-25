@@ -1,22 +1,110 @@
 ---
 import { site } from '../data/site';
 ---
-<section id="sobre-mi" class="about section" style="background: var(--cream);" aria-labelledby="about-heading">
-  <div class="container about__inner">
-    <div class="about__image">
-      <img
-        src={site.about.image}
-        alt={site.about.imageAlt}
-        width="500"
-        height="600"
-        loading="lazy"
-      />
-    </div>
-    <div class="about__text">
-      <h2 id="about-heading">Soy <em>{site.about.heading}</em>.</h2>
+<section id="sobre-mi" class="about section" aria-labelledby="about-heading">
+  <div class="container">
+    <h2 id="about-heading" class="section__title">{site.about.heading}</h2>
+
+    <div class="about__intro">
       {site.about.paragraphs.map(p => (
         <p set:html={p.replace('\n', '<br />')} />
       ))}
     </div>
+
+    <div class="team__grid">
+      {site.team.map(member => (
+        <article class="team__card">
+          <div class="team__img-wrap">
+            <img
+              src={member.image}
+              alt={member.imageAlt}
+              width="400"
+              height="460"
+              loading="lazy"
+            />
+          </div>
+          <div class="team__info">
+            <p class="team__college">{member.college}</p>
+            <h3 class="team__name">{member.name}</h3>
+            <p class="team__role">{member.role}</p>
+            <p class="team__bio">{member.bio}</p>
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
 </section>
+
+<style>
+  .about { background: var(--color-bg-alt); }
+
+  .about__intro {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .about__intro p {
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    line-height: 1.75;
+    margin-bottom: .875rem;
+  }
+
+  .team__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+  .team__card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .team__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .team__img-wrap img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+  }
+  .team__info { padding: 1.75rem; }
+
+  .team__college {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: .25rem;
+  }
+  .team__name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-text);
+    margin-bottom: .25rem;
+  }
+  .team__role {
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+  }
+  .team__bio {
+    font-size: .9rem;
+    color: var(--color-text-soft);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .team__grid { grid-template-columns: 1fr; }
+    .team__img-wrap img { height: 240px; }
+  }
+</style>
