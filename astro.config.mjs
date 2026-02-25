@@ -6,7 +6,7 @@ import path from "path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  // site: 'https://tu-dominio-final.com', // (opcional para estático; útil cuando tengas dominio real)
+  site: "https://ortofisio-valencia.vercel.app", // (opcional para estático; útil cuando tengas dominio real)
   output: "static",
   compressHTML: true,
 
